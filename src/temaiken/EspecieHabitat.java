@@ -1,32 +1,49 @@
 package temaiken;
 
+/**
+ * La clase EspecieHabitat representa la relación entre una Especie 
+ * y un Habitat dentro del sistema del Temaiken.
+ */
 public class EspecieHabitat {
-    private String nombreEspecie;
-    private String nombreHabitat;
 
-    public EspecieHabitat(String nombreEspecie, String nombreHabitat) {
-        this.nombreEspecie = nombreEspecie;
-        this.nombreHabitat = nombreHabitat;
-    }
+    private Especie especie;
+    private Habitat habitat;
 
-    public String getNombreEspecie() {
-        return nombreEspecie;
-    }
-
-    public String getNombreHabitat() {
-        return nombreHabitat;
-    }
-
-    public void setNombreEspecie(String nombreEspecie) {
-        this.nombreEspecie = nombreEspecie;
+    /**
+     * Crea una nueva relación entre una especie y un hábitat.
+     *
+     * @param especie la especie asignada al hábitat
+     * @param habitat el hábitat donde se encuentra la especie
+     */
+    public EspecieHabitat(Especie especie, Habitat habitat) {
+        this.especie = especie;
+        this.habitat = habitat;
     }
 
-    public void setNombreHabitat(String nombreHabitat) {
-        this.nombreHabitat = nombreHabitat;
+    /**
+     * Devuelve la especie asociada.
+     *
+     * @return la especie
+     */
+    public Especie getEspecie() {
+        return especie;
     }
-    
-    public String mostrar(){
-        return "Nombre Especie: "+nombreEspecie+" Nombre Habitat: "+nombreHabitat;
+
+    /**
+     * Devuelve el hábitat asociado.
+     *
+     * @return el hábitat
+     */
+    public Habitat getHabitat() {
+        return habitat;
     }
-    
+
+    /**
+     * Devuelve el nombre del hábitat asociado a esta relación.
+     *
+     * @return el nombre del hábitat
+     */
+    public String getHabitatNombre() {
+        return habitat.getNombre();
+    }
 }
